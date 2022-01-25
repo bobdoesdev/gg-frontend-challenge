@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <script src="https://use.fontawesome.com/665011b42d.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul></ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <main>
+        <h1 class="checkout__header">Checkout</h1>
+        <hr class="checkout__hr" />
+        <div class="checkout_wrapper">
+          <div class="checkout__inner">
+            <h3 class="checkout__innerHeader">Create Login</h3>
+            <p class="checkout__innerText">
+              Teachers &#x26; students share one login
+            </p>
+
+            <form action="" id="checkout__createLogin">
+              <fieldset class="checkout__fieldset">
+                <div class="checkout__inputWrapper">
+                  <label for="username" class="sr-only">Username</label>
+                  <input
+                    class="checkout__input"
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="Username"
+                  />
+                </div>
+
+                <div class="checkout__inputWrapper">
+                  <label for="password" class="sr-only">Password</label>
+                  <input
+                    class="checkout__input"
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Password"
+                  />
+                </div>
+
+                <div class="checkout__inputWrapper">
+                  <label for="pin" class="sr-only">Pin</label>
+                  <input
+                    class="checkout__input"
+                    type="text"
+                    name="pin"
+                    id="pin"
+                    placeholder="Create a 4-digit PIN"
+                    maxlength="4"
+                    minlength="4"
+                    inputmode="numeric"
+                  />
+                </div>
+
+                <p class="checkout__innerText">
+                  Pin is for access to the manage account page.
+                </p>
+              </fieldset>
+            </form>
+          </div>
+          <div class="checkout__inner">
+            <h3 class="checkout__innerHeader">Customer Information</h3>
+            <p class="checkout__innerText">
+              For the person/organization paying
+            </p>
+            <form action="" id="checkout__customerInfo">
+              <fieldset class="checkout__fieldset">
+                <div class="checkout__inputWrapper checkout__librarian">
+                  <label for="your_name" class="sr-only">Your Name</label>
+                  <input
+                    class="checkout__input"
+                    type="text"
+                    name="your_name"
+                    id="your_name"
+                    placeholder="Your Name"
+                  />
+
+                  <label for="librarian" class="sr-only">Libarian</label>
+                  <select name="librarian" id="librarian" class="checkout__input">
+                    <option value="librarian" default>Libarian</option>
+                    <option value="librarian1">Libarian 1</option>
+                    <option value="librarian2">Libarian 2</option>
+                    <option value="librarian3">Libarian 3</option>
+                  </select>
+                </div>
+
+                <div class="checkout__inputWrapper">
+                  <label for="email" class="sr-only">Email Address</label>
+                  <input
+                    class="checkout__input"
+                    type="text"
+                    name="email"
+                    id="email"
+                    placeholder="Email Address"
+                  />
+                </div>
+
+                <div class="checkout__inputWrapper">
+                  <label for="school_name" class="sr-only">School Name</label>
+                  <input
+                    class="checkout__input"
+                    type="text"
+                    name="school_name"
+                    id="school_name"
+                    placeholder="School Name"
+                  />
+                </div>
+
+                <div class="checkout__inputWrapper ">
+                  <label for="billing_address" class="sr-only"
+                    >Billing Address</label
+                  >
+                  <input
+                    class="checkout__input"
+                    type="text"
+                    name="billing_address"
+                    id="billing_address"
+                    placeholder="Billing Address"
+                  />
+                </div>
+
+                <div class="checkout__inputWrapper checkout__inputWrapper--address">
+                  <label for="city" class="sr-only">City</label>
+                  <input
+                    class="checkout__input"
+                    type="city"
+                    name="city"
+                    id="city"
+                    placeholder="City"
+                  />
+
+                  <label for="state" class="sr-only">State</label>
+                  <select name="state" id="state" class="checkout__input">
+                    <option value="state" default>State</option>
+                    <option value="state1">State 1</option>
+                    <option value="state2">State 2</option>
+                    <option value="state3">State 3</option>
+                  </select>
+
+                  <label for="zip" class="sr-only">Zip Code</label>
+                  <input
+                    class="checkout__input"
+                    max-length="5"
+                    min-length="5"
+                    type="text"
+                    name="zip"
+                    id="zip"
+                    placeholder="ZIP"
+                  />
+                </div>
+
+                <a href="#" class="checkout__link"
+                  >Click here for international address.</a
+                >
+              </fieldset>
+            </form>
+          </div>
+          <div class="checkout__inner">
+            <h3 class="checkout__innerHeader">Secure Payment</h3>
+            <p class="checkout__innerText">Choose payment method below</p>
+            <form action="" class="checkout__payment">
+              <fieldset class="checkout__fieldset">
+                <div class="checkout__radio checkout__radio--checked">
+                  <input
+                    type="radio"
+                    name="payment_type"
+                    id="credit_card"
+                    checked
+                  />
+                  <label for="credit_card" class="">Payment Type </label>
+                </div>
+
+                <div class="checkout__radio">
+                  <input type="radio" name="payment_type" id="purchase_order" />
+                  <label for="purchase_order" class="">Purchase Order</label>
+                </div>
+
+                <div class="checkout__card checkout__card--showing">
+                  <div class="checkout__inputWrapper ">
+                    <label for="card_number" class="sr-only">Card Number</label>
+                    <input
+                      class="checkout__input"
+                      type="text"
+                      name="card_number"
+                      id="card_number"
+                      placeholder="Card Number"
+                    />
+                  </div>
+
+                  <div class="checkout__inputWrapper checkout__cardDetails">
+                    <label for="card_month" class="sr-only">Month</label>
+                    <input
+                      class="checkout__input"
+                      type="text"
+                      name="card_month"
+                      id="card_month"
+                      placeholder="MM"
+                      maxlength="2"
+                      minlength="2"
+                    />
+
+                    <label for="card_year" class="sr-only">Month</label>
+                    <input
+                      class="checkout__input"
+                      type="text"
+                      name="card_year"
+                      id="card_year"
+                      placeholder="YY"
+                      maxlength="2"
+                      minlength="2"
+                    />
+
+                    <label for="card_cvc" class="sr-only">CVC</label>
+                    <input
+                      class="checkout__input"
+                      type="text"
+                      name="card_cvc"
+                      id="card_cvc"
+                      placeholder="CVC"
+                      maxlength="3"
+                      minlength="3"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+
+              <button type="submit" class="checkout__button">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                Pay Now
+              </button>
+            </form>
+          </div>
+          <div class="checkout__inner">
+            <div class="checkout__inner--alt">
+              <h3 class="checkout__innerHeader">Order Summary</h3>
+              <p class="checkout__innerText--alt">School Yearly Plan </p>
+              <p class="checkout__innerText">
+                This is a yearly recurring subscription paid once a year at $79. Cancel any time with 1 click on the manage account page. We send email reminders 30 days befor each renewal.
+              </p>
+
+              <form action="" id="checkout__createLogin">
+                <fieldset class="checkout__fieldset">
+                  <label for="plan" class="sr-only">Yearly Plan</label>
+                  <select name="plan" id="plan" class="checkout__input">
+                    <option value="plan1">1 Year @ $795 per year</option>
+                    <option value="plan2">2 Year @ $795 per year</option>
+                    <option value="plan3">3 Year @ $795 per year</option>
+                  </select>
+                </fieldset>
+
+                <p class="checkout__innerText checkout__innerText--flex">Total: <strong class="checkout__innerText--alt">$795</strong> </p>
+
+              </form>
+
+
+            </div>
+            <div class="checkout__banner">
+              <div class="checkout__bannerIcon">
+                <i class="fa fa-bell" aria-hidden="true"></i>
+              </div>
+              <div class="checkout__bannerText">
+                <h4>January Promition Applied</h4>
+                <p>9 Months Free Will Be Auto-Added To Plan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
