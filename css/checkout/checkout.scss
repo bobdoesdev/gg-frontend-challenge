@@ -18,19 +18,19 @@ body {
   position: relative;
   z-index: 1;
 
-  // &:before {
-  //   position: absolute;
-  //   content: "";
-  //   background-image: url("./images/GG-Checkout.jpg");
-  //   background-repeat: no-repeat;
-  //   background-position: top center; /* adjust to whatever you like. */
-  //   opacity: 0.6; /* see through the page */
-  //   top: 0;
-  //   left: 0;
-  //   height: 100%;
-  //   width: 100%;
-  //   z-index: 0;
-  // }
+  &:before {
+    position: absolute;
+    content: "";
+    background-image: url("./images/GG-Checkout.jpg");
+    background-repeat: no-repeat;
+    background-position: top center; /* adjust to whatever you like. */
+    opacity: 0.6; /* see through the page */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
 }
 
 select {
@@ -137,7 +137,7 @@ a {
   }
 
   h3 {
-    font-size: 1.3125rem;
+    font-size: 20px;
   }
 }
 
@@ -145,11 +145,11 @@ a {
   justify-content: space-between;
 
   select {
-    max-width: 36%;
+    max-width: 37%;
   }
 
   input {
-    max-width: 60%;
+    max-width: 59%;
   }
 }
 
@@ -169,6 +169,11 @@ a {
   .checkout__innerText {
     line-height: 1.4;
     margin-bottom: 8px;
+    font-size: 13px;
+
+    &--flex {
+      font-size: 16px;
+    }
   }
   .checkout__fieldset {
     margin-top: 0;
@@ -184,7 +189,7 @@ a {
 
 .checkout__innerText {
   color: #838a8f;
-  font-size: 0.8rem;
+  font-size: 14px;
   margin-top: 9px;
   line-height: 1.2;
 
@@ -197,7 +202,6 @@ a {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
-    font-size: 1rem;
   }
 }
 
@@ -209,6 +213,7 @@ a {
   width: 100%;
   font-family: $primary;
   color: #838a8f;
+  font-weight: 400;
 
   &::placeholder {
     font-family: $primary;
@@ -226,8 +231,11 @@ a {
 .checkout__cardDetails {
   justify-content: space-between;
   input {
-    max-width: 31%;
+    max-width: 30%;
     width: 100%;
+    &:nth-of-type(3) {
+      max-width: 32.5%;
+    }
   }
 }
 
@@ -242,15 +250,15 @@ a {
     justify-content: space-between;
     input {
       &:first-of-type {
-        max-width: 35%;
+        max-width: 36%;
       }
 
-      max-width: 29%;
+      max-width: 28%;
       width: 100%;
     }
 
     select {
-      max-width: 29%;
+      max-width: 28%;
       width: 100%;
     }
   }
@@ -260,6 +268,7 @@ a {
   display: block;
   margin-top: 14px;
   font-size: 0.85rem;
+  text-underline-offset: 2px;
 }
 
 .checkout__radio {
@@ -267,7 +276,7 @@ a {
   font-weight: bold;
   padding: 16px;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   border-radius: $border-radius;
   margin-top: 10px;
   background-color: #f8f8f8;
@@ -394,6 +403,7 @@ a {
     margin-top: 8px;
     font-weight: normal;
     max-width: 75%;
+    color: #deadde;
   }
 }
 
