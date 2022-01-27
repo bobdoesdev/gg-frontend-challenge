@@ -9,7 +9,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="style.css" />
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -25,14 +28,14 @@
       <main>
         <h1 class="checkout__header">Checkout</h1>
         <hr class="checkout__hr" />
-        <div class="checkout_wrapper">
-          <div class="checkout__inner">
-            <h3 class="checkout__innerHeader">Create Login</h3>
-            <p class="checkout__innerText">
-              Teachers &#x26; students share one login
-            </p>
+        <div class="checkout">
+          <form action="" class="checkout__wrapper">
+            <div class="checkout__inner">
+              <h3 class="checkout__innerHeader">Create Login</h3>
+              <p class="checkout__innerText">
+                Teachers &#x26; students share one login
+              </p>
 
-            <form action="" id="checkout__createLogin">
               <fieldset class="checkout__fieldset">
                 <div class="checkout__inputWrapper">
                   <label for="username" class="sr-only">Username</label>
@@ -42,6 +45,7 @@
                     name="username"
                     id="username"
                     placeholder="Username"
+                    required
                   />
                 </div>
 
@@ -53,6 +57,7 @@
                     name="password"
                     id="password"
                     placeholder="Password"
+                    required
                   />
                 </div>
 
@@ -67,21 +72,20 @@
                     maxlength="4"
                     minlength="4"
                     inputmode="numeric"
+                    required
                   />
                 </div>
 
                 <p class="checkout__innerText">
-                  Pin is for access to the manage account page.
+                  PIN is for access to the manage account page.
                 </p>
               </fieldset>
-            </form>
-          </div>
-          <div class="checkout__inner">
-            <h3 class="checkout__innerHeader">Customer Information</h3>
-            <p class="checkout__innerText">
-              For the person/organization paying
-            </p>
-            <form action="" id="checkout__customerInfo">
+            </div>
+            <div class="checkout__inner">
+              <h3 class="checkout__innerHeader">Customer Information</h3>
+              <p class="checkout__innerText">
+                For the person/organization paying
+              </p>
               <fieldset class="checkout__fieldset">
                 <div class="checkout__inputWrapper checkout__librarian">
                   <label for="your_name" class="sr-only">Your Name</label>
@@ -91,11 +95,16 @@
                     name="your_name"
                     id="your_name"
                     placeholder="Your Name"
+                    required
                   />
 
                   <label for="librarian" class="sr-only">Libarian</label>
-                  <select name="librarian" id="librarian" class="checkout__input">
-                    <option value="librarian" default>Libarian</option>
+                  <select
+                    name="librarian"
+                    id="librarian"
+                    class="checkout__input"
+                  >
+                    <option value="librarian" default disabled>Libarian</option>
                     <option value="librarian1">Libarian 1</option>
                     <option value="librarian2">Libarian 2</option>
                     <option value="librarian3">Libarian 3</option>
@@ -110,6 +119,7 @@
                     name="email"
                     id="email"
                     placeholder="Email Address"
+                    required
                   />
                 </div>
 
@@ -121,10 +131,11 @@
                     name="school_name"
                     id="school_name"
                     placeholder="School Name"
+                    required
                   />
                 </div>
 
-                <div class="checkout__inputWrapper ">
+                <div class="checkout__inputWrapper">
                   <label for="billing_address" class="sr-only"
                     >Billing Address</label
                   >
@@ -134,10 +145,13 @@
                     name="billing_address"
                     id="billing_address"
                     placeholder="Billing Address"
+                    required
                   />
                 </div>
 
-                <div class="checkout__inputWrapper checkout__inputWrapper--address">
+                <div
+                  class="checkout__inputWrapper checkout__inputWrapper--address"
+                >
                   <label for="city" class="sr-only">City</label>
                   <input
                     class="checkout__input"
@@ -145,11 +159,12 @@
                     name="city"
                     id="city"
                     placeholder="City"
+                    required
                   />
 
                   <label for="state" class="sr-only">State</label>
                   <select name="state" id="state" class="checkout__input">
-                    <option value="state" default>State</option>
+                    <option value="state" default disabled>State</option>
                     <option value="state1">State 1</option>
                     <option value="state2">State 2</option>
                     <option value="state3">State 3</option>
@@ -164,6 +179,7 @@
                     name="zip"
                     id="zip"
                     placeholder="ZIP"
+                    required
                   />
                 </div>
 
@@ -171,12 +187,10 @@
                   >Click here for international address.</a
                 >
               </fieldset>
-            </form>
-          </div>
-          <div class="checkout__inner">
-            <h3 class="checkout__innerHeader">Secure Payment</h3>
-            <p class="checkout__innerText">Choose payment method below</p>
-            <form action="" class="checkout__payment">
+            </div>
+            <div class="checkout__inner">
+              <h3 class="checkout__innerHeader">Secure Payment</h3>
+              <p class="checkout__innerText">Choose payment method below</p>
               <fieldset class="checkout__fieldset">
                 <div class="checkout__radio checkout__radio--checked">
                   <input
@@ -184,8 +198,9 @@
                     name="payment_type"
                     id="credit_card"
                     checked
+                    required
                   />
-                  <label for="credit_card" class="">Payment Type </label>
+                  <label for="credit_card" class="">Credit/Debit Card </label>
                 </div>
 
                 <div class="checkout__radio">
@@ -194,7 +209,7 @@
                 </div>
 
                 <div class="checkout__card checkout__card--showing">
-                  <div class="checkout__inputWrapper ">
+                  <div class="checkout__inputWrapper">
                     <label for="card_number" class="sr-only">Card Number</label>
                     <input
                       class="checkout__input"
@@ -202,6 +217,7 @@
                       name="card_number"
                       id="card_number"
                       placeholder="Card Number"
+                      required
                     />
                   </div>
 
@@ -215,6 +231,7 @@
                       placeholder="MM"
                       maxlength="2"
                       minlength="2"
+                      required
                     />
 
                     <label for="card_year" class="sr-only">Month</label>
@@ -226,6 +243,7 @@
                       placeholder="YY"
                       maxlength="2"
                       minlength="2"
+                      required
                     />
 
                     <label for="card_cvc" class="sr-only">CVC</label>
@@ -237,26 +255,29 @@
                       placeholder="CVC"
                       maxlength="3"
                       minlength="3"
+                      required
                     />
                   </div>
                 </div>
               </fieldset>
 
               <button type="submit" class="checkout__button">
-                <i class="fa fa-lock" aria-hidden="true"></i>
-                Pay Now
+                <span class="checkout__buttonInner">
+                  <i class="fa fa-lock" aria-hidden="true"></i>
+                  Pay Now
+                </span>
               </button>
-            </form>
-          </div>
-          <div class="checkout__inner">
-            <div class="checkout__inner--alt">
-              <h3 class="checkout__innerHeader">Order Summary</h3>
-              <p class="checkout__innerText--alt">School Yearly Plan </p>
-              <p class="checkout__innerText">
-                This is a yearly recurring subscription paid once a year at $795. Cancel any time with 1 click on the manage account page. We send email reminders 30 days before each renewal.
-              </p>
+            </div>
+            <div class="checkout__inner">
+              <div class="checkout__inner--alt">
+                <h3 class="checkout__innerHeader">Order Summary</h3>
+                <p class="checkout__innerText--alt">School Yearly Plan</p>
+                <p class="checkout__innerText">
+                  This is a yearly recurring subscription paid once a year at
+                  $795. Cancel any time with 1 click on the manage account page.
+                  We send email reminders 30 days before each renewal.
+                </p>
 
-              <form action="" id="checkout__createLogin">
                 <fieldset class="checkout__fieldset">
                   <label for="plan" class="sr-only">Yearly Plan</label>
                   <select name="plan" id="plan" class="checkout__input">
@@ -266,22 +287,21 @@
                   </select>
                 </fieldset>
 
-                <p class="checkout__innerText checkout__innerText--flex">Total: <strong class="checkout__innerText--alt">$795</strong> </p>
-
-              </form>
-
-
-            </div>
-            <div class="checkout__banner">
-              <div class="checkout__bannerIcon">
-                <i class="fa fa-bell" aria-hidden="true"></i>
+                <p class="checkout__innerText checkout__innerText--flex">
+                  Total: <strong class="checkout__innerText--alt">$795</strong>
+                </p>
               </div>
-              <div class="checkout__bannerText">
-                <h4>January Promition Applied</h4>
-                <p>9 Months Free Will Be Auto-Added To Plan</p>
+              <div class="checkout__banner">
+                <div class="checkout__bannerIcon">
+                  <i class="fa fa-bell" aria-hidden="true"></i>
+                </div>
+                <div class="checkout__bannerText">
+                  <h4>January Promotion Applied</h4>
+                  <p>9 Months Free Will Be Auto-Added To Plan</p>
+                </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </main>
     </div>

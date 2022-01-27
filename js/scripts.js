@@ -17,12 +17,12 @@ $( document ).ready(function() {
             $input.prop('checked', true);
             ;
 
-            // console.log($input.attr('id'));
-
             if($input.attr('id') === 'credit_card'){
                 $cardDetails.addClass('checkout__card--showing');
+                $cardDetails.find('input').attr('required', true);
             } else{
                 $cardDetails.removeClass('checkout__card--showing');
+                $cardDetails.find('input').attr('required', false);
             }
         }
 
