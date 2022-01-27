@@ -18,19 +18,19 @@ body {
   position: relative;
   z-index: 1;
 
-  &:before {
-    position: absolute;
-    content: "";
-    background-image: url("./images/GG-Checkout.jpg");
-    background-repeat: no-repeat;
-    background-position: top center; /* adjust to whatever you like. */
-    opacity: 0.6; /* see through the page */
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 0;
-  }
+  // &:before {
+  //   position: absolute;
+  //   content: "";
+  //   background-image: url("./images/GG-Checkout.jpg");
+  //   background-repeat: no-repeat;
+  //   background-position: top center; /* adjust to whatever you like. */
+  //   opacity: 0.6; /* see through the page */
+  //   top: 0;
+  //   left: 0;
+  //   height: 100%;
+  //   width: 100%;
+  //   z-index: 0;
+  // }
 }
 
 select {
@@ -421,5 +421,9 @@ a {
 
   h4 {
     font-size: 0.85rem;
+  }
+
+  @media (max-width: 650px) {
+    width: 100%;
   }
 }
