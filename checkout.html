@@ -104,7 +104,9 @@
                     id="librarian"
                     class="checkout__input"
                   >
-                    <option value="librarian" selected disabled>Libarian</option>
+                    <option value="librarian" selected disabled>
+                      Libarian
+                    </option>
                     <option value="librarian1">Libarian 1</option>
                     <option value="librarian2">Libarian 2</option>
                     <option value="librarian3">Libarian 3</option>
@@ -192,7 +194,10 @@
               <h3 class="checkout__innerHeader">Secure Payment</h3>
               <p class="checkout__innerText">Choose payment method below</p>
               <fieldset class="checkout__fieldset">
-                <div class="checkout__radio checkout__radio--checked">
+                <div
+                  class="checkout__radio checkout__radio--checked"
+                  data-payment-type="credit_card"
+                >
                   <input
                     type="radio"
                     name="payment_type"
@@ -203,12 +208,12 @@
                   <label for="credit_card" class="">Credit/Debit Card </label>
                 </div>
 
-                <div class="checkout__radio">
+                <div class="checkout__radio" data-payment-type="purchase_order">
                   <input type="radio" name="payment_type" id="purchase_order" />
                   <label for="purchase_order" class="">Purchase Order</label>
                 </div>
 
-                <div class="checkout__card checkout__card--showing">
+                <div class="checkout__payment checkout__card checkout__payment--showing" data-payment-type="credit_card">
                   <div class="checkout__inputWrapper">
                     <label for="card_number" class="sr-only">Card Number</label>
                     <input
@@ -234,7 +239,7 @@
                       required
                     />
 
-                    <label for="card_year" class="sr-only">Month</label>
+                    <label for="card_year" class="sr-only">Year</label>
                     <input
                       class="checkout__input"
                       type="text"
@@ -258,46 +263,165 @@
                       required
                     />
                   </div>
+
+                  <button type="submit" class="checkout__button">
+                    <span class="checkout__buttonInner">
+                      <i class="fa fa-lock" aria-hidden="true"></i>
+                      Pay Now
+                    </span>
+                  </button>
+                </div>
+
+                <div
+                  class="checkout__payment  checkout__po" data-payment-type="purchase_order"
+                >
+                  <div class="checkout__inputWrapper">
+                    <label for="phone" class="sr-only">Phone Number</label>
+                    <input
+                      class="checkout__input"
+                      type="tel"
+                      name="phone"
+                      id="phone"
+                      placeholder="Your Phone Number"
+                      required
+                    />
+                  </div>
+
+                  <div class="checkout__inputWrapper">
+                    <label for="billing_name" class="sr-only"
+                      >Billing Person Name</label
+                    >
+                    <input
+                      class="checkout__input"
+                      type="text"
+                      name="billing_name"
+                      id="billing_name"
+                      placeholder="Billing Person Name"
+                      required
+                    />
+                  </div>
+
+                  <div class="checkout__inputWrapper">
+                    <label for="billing_email" class="sr-only"
+                      >Billing Person Email</label
+                    >
+                    <input
+                      class="checkout__input"
+                      type="text"
+                      name="billing_email"
+                      id="billing_email"
+                      placeholder="Billing Person Email"
+                      required
+                    />
+                  </div>
+
+                  <div class="checkout__inputWrapper checkout__checkbox">
+                    <input
+                      class="checkout__inputCheckbox"
+                      type="checkbox"
+                      name="terms"
+                      id="terms"
+                      required
+                      checked
+                    />
+                    <label for="terms"
+                      >By checking this box, I agree to pay $795 and will submit
+                      a PO within 10 business days.</label
+                    >
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="checkout__button checkout__button--alt"
+                  >
+                    <span class="checkout__buttonInner">
+                      <i class="fa fa-lock" aria-hidden="true"></i>
+                      Active and Send Invoice
+                    </span>
+                  </button>
                 </div>
               </fieldset>
-
-              <button type="submit" class="checkout__button">
-                <span class="checkout__buttonInner">
-                  <i class="fa fa-lock" aria-hidden="true"></i>
-                  Pay Now
-                </span>
-              </button>
             </div>
             <div class="checkout__inner">
-              <div class="checkout__inner--alt">
-                <h3 class="checkout__innerHeader">Order Summary</h3>
-                <p class="checkout__innerText--alt">School Yearly Plan</p>
-                <p class="checkout__innerText">
-                  This is a yearly recurring subscription paid once a year at
-                  $795. Cancel any time with 1 click on the manage account page.
-                  We send email reminders 30 days before each renewal.
-                </p>
+              <div
+                class="checkout__paymentCol checkout__paymentCol--showing "
+                data-payment-type="credit_card"
+              >
+                <div class="checkout__inner--alt">
+                  <h3 class="checkout__innerHeader">Order Summary</h3>
+                  <p class="checkout__innerText--alt">School Yearly Plan</p>
+                  <p class="checkout__innerText">
+                    This is a yearly recurring subscription paid once a year at
+                    $795. Cancel any time with 1 click on the manage account
+                    page. We send email reminders 30 days before each renewal.
+                  </p>
 
-                <fieldset class="checkout__fieldset">
-                  <label for="plan" class="sr-only">Yearly Plan</label>
-                  <select name="plan" id="plan" class="checkout__input">
-                    <option value="plan1">1 Year @ $795 per year</option>
-                    <option value="plan2">2 Year @ $795 per year</option>
-                    <option value="plan3">3 Year @ $795 per year</option>
-                  </select>
-                </fieldset>
+                  <fieldset class="checkout__fieldset">
+                    <label for="cc_plan" class="sr-only">Yearly Plan</label>
+                    <select name="cc_plan" id="cc_plan" class="checkout__input">
+                      <option value="plan1" data-value="795">1 Year @ $795 per year</option>
+                      <option value="plan2" data-value="995">2 Year @ $995 per year</option>
+                      <option value="plan3" data-value="895">3 Year @ $895 per year</option>
+                    </select>
+                  </fieldset>
 
-                <p class="checkout__innerText checkout__innerText--flex">
-                  Total: <strong class="checkout__innerText--alt">$795</strong>
-                </p>
-              </div>
-              <div class="checkout__banner">
-                <div class="checkout__bannerIcon">
-                  <i class="fa fa-bell" aria-hidden="true"></i>
+                  <p class="checkout__innerText checkout__innerText--flex">
+                    Total:
+                    <span class="checkout__total"></span>
+                  </p>
                 </div>
-                <div class="checkout__bannerText">
-                  <h4>January Promotion Applied</h4>
-                  <p>9 Months Free Will Be Auto-Added To Plan</p>
+                <div class="checkout__banner">
+                  <div class="checkout__bannerIcon">
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                  </div>
+                  <div class="checkout__bannerText">
+                    <h4>January Promotion Applied</h4>
+                    <p>9 Months Free Will Be Auto-Added To Plan</p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="checkout__paymentCol checkout__paymentCol--purchaseOrder"
+                data-payment-type="purchase_order"
+              >
+                <div class="checkout__banner">
+                  <div class="checkout__bannerIcon">
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                  </div>
+                  <div class="checkout__bannerText">
+                    <h4>January Promotion Applied</h4>
+                    <p>9 Months Free Will Be Auto-Added To Plan</p>
+                  </div>
+                </div>
+
+                <div class="checkout__inner--alt">
+                  <h3 class="checkout__innerHeader">Order Summary</h3>
+                  <p class="checkout__innerText--alt">School Yearly Plan</p>
+                  <p class="checkout__innerText">
+                    <span class="orange-highlight">Instructions:</span><br>
+                    Please submit a PO within 10 days to keep your account
+                    active. After activating you will be emailed an invoice.
+                    Submit your PO via: <br />
+                    Fax: <br />
+                    <strong>(707) 312-8176</strong><br />
+                    Email:
+                    <strong>order@generationgenius.com</strong>
+                  </p>
+
+                  <fieldset class="checkout__fieldset">
+                    <label for="po_plan" class="sr-only">Yearly Plan</label>
+                    <select name="po_plan" id="po_plan" class="checkout__input">
+                      <option value="plan1" data-value="795">1 Year @ $795 per year</option>
+                      <option value="plan2" data-value="995">2 Year @ $995 per year</option>
+                      <option value="plan3" data-value="895">3 Year @ $895 per year</option>
+                    </select>
+                  </fieldset>
+
+                  <p class="checkout__innerText checkout__innerText--flex">
+                    Total:
+                    <span class="checkout__total"></span>
+                  </p>
                 </div>
               </div>
             </div>

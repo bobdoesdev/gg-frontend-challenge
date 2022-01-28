@@ -21,7 +21,7 @@ body {
   // &:before {
   //   position: absolute;
   //   content: "";
-  //   background-image: url("./images/GG-Checkout.jpg");
+  //   background-image: url("./images/GG-Checkout-PO.jpg");
   //   background-repeat: no-repeat;
   //   background-position: top center; /* adjust to whatever you like. */
   //   opacity: 0.6; /* see through the page */
@@ -220,7 +220,7 @@ a {
   }
 }
 
-.checkout__card {
+.checkout__payment {
   display: none;
   margin-top: 2px;
   &--showing {
@@ -287,7 +287,7 @@ a {
 
   &--checked {
     background-color: #fff;
-    border: 2px solid $orange;
+    border: 2px solid #f17e00;
   }
 
   input {
@@ -307,12 +307,77 @@ a {
     cursor: pointer;
 
     &:checked {
-      border-color: $orange;
+      border-color: #f17e00;
       background-image: url("./images/check.png");
       background-size: cover;
       z-index: 1;
     }
   }
+}
+
+.checkout__checkbox {
+  justify-content: flex-start;
+  color: #838a8f;
+  font-weight: 400;
+  font-size: 0.9rem;
+  font-family: $primary;
+
+  &--checked {
+    background-color: #fff;
+    border: 2px solid #f17e00;
+  }
+
+  input {
+    margin-right: 10px;
+    position: relative;
+    max-width: 20px;
+    height: 20px;
+    width: 100%;
+    appearance: none;
+    background: transparent;
+    border: 1px solid #c9d2d8;
+    border-radius: $border-radius;
+    margin: 0 10px 0 4px;
+
+    outline: none;
+    transition: 0.5s ease;
+    opacity: 0.8;
+    cursor: pointer;
+
+    &:checked {
+      border-color: #f17e00;
+      background-image: url("./images/checkbox.png");
+      background-size: cover;
+      z-index: 1;
+    }
+  }
+}
+
+.checkout__paymentCol {
+  display: none;
+  &--showing {
+    display: block;
+  }
+
+  &--purchaseOrder {
+    .checkout__banner {
+      margin-top: 0;
+      margin-bottom: 23px;
+    }
+
+    .checkout__innerHeader{
+      margin-bottom: 17px;
+    }
+  }
+
+  strong {
+    color: #2e3840;
+  }
+}
+
+.orange-highlight {
+  font-weight: bold;
+  color: #f17e00;
 }
 
 .checkout__button {
@@ -377,6 +442,13 @@ a {
     z-index: 2;
     transition: all 0.3s ease-in-out;
   }
+
+  &--alt {
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
 }
 
 .checkout__buttonInner {
@@ -426,4 +498,10 @@ a {
   @media (max-width: 650px) {
     width: 100%;
   }
+}
+
+.checkout__total {
+  color: #2e3840;
+  margin-bottom: 13px;
+  font-weight: 700;
 }
